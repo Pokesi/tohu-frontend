@@ -49,7 +49,9 @@ import { Bond as IBond } from "./lib/Bond";
 import { useGoogleAnalytics } from "./hooks/useGoogleAnalytics";
 
 // 😬 Sorry for all the console logging
-const DEBUG = false;
+//
+// I love console logging - RandomZ
+const DEBUG = true;
 
 // 🛰 providers
 if (DEBUG) console.log("📡 Connecting to Mainnet Ethereum");
@@ -347,7 +349,7 @@ function App() {
                 </Route>
    */}
 
-              <Route path="/absorption">
+              {/*<Route path="/absorption">
                 {(absorptionBonds as IAllBondData[]).map(bond => {
                   return (
                     <Route exact key={bond.name} path={`/absorption/${bond.name}`}>
@@ -356,7 +358,7 @@ function App() {
                   );
                 })}
                 <AbsorptionBonds />
-              </Route>
+              </Route>*/}
 
               <Route path="/bonds">
                 {(bonds as IAllBondData[]).map(bond => {
