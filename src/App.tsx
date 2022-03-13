@@ -53,6 +53,9 @@ import { useGoogleAnalytics } from "./hooks/useGoogleAnalytics";
 // I love console logging - RandomZ
 const DEBUG = true;
 
+// Should be in beta
+const BETA_WARNING = true;
+
 // 🛰 providers
 if (DEBUG) console.log("📡 Connecting to Mainnet Ethereum");
 // 🔭 block explorer URL
@@ -228,8 +231,11 @@ function App() {
       setWalletChecked(true);
     }
     if (shouldTriggerSafetyCheck()) {
-      dispatch(info("Safety Check: Always verify you're on the right site!"));
+      dispatch(info("Always verify you're on tohu.tk!"));
     }
+	if (BETA_WARNING) {
+	  dispatch(info("We are currently in beta! For now, Exodia's subgraph is being used!"));
+	}
 
     interval = setInterval(() => {
       loadMetrics(-1);
